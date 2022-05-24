@@ -1,0 +1,25 @@
+﻿@model List<Project.Models.SignUp>
+<table class="table table-dark table-hover table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Second Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Phone NO</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Project.Models.SignUp s in Model)
+            {
+        <tr>
+            <td>@s.firstName</td>
+            <td>@s.secondName</td>
+            <td>@s.email</td>
+            <td>@s.gender</td>
+            <td>@s.phone_no</td>
+        </tr>
+            }
+    </tbody>
+</table>

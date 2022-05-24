@@ -1,0 +1,22 @@
+﻿@model SignIn
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/SignUp.css">
+</head>
+<body>
+    <p style="background-image: url('C:\Users\Ahmad\source\repos\Project\Project\Images\bg.jpg'); height:100%" />
+        <div class="parent_div">
+            <form method="post" action="/SignIn/SignIn">
+                <h2 style="text-align:center">Welcome</h2>
+                <div class="blocks"><input asp-for="userName" placeholder="UserName" /><br /></div>
+                <div class="blocks"><input asp-for="password" type="password" placeholder="Password" /><br /></div>
+                <div class="button"><button type="submit" value="signup">Login</button></div>
+            </form>
+            <div class="parent_div">
+                <p style="color:red">@Model.message</p>
+                <h5>Don't Have Account?</h5>
+                <div><a href="/SignUp/SignUp" class="button">SignUp Here</a></div>
+            </div>
+        </div>
+</body>
+</html>

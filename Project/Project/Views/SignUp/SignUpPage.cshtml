@@ -1,0 +1,28 @@
+﻿@model SignUp
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/SignUp.css">
+</head>
+<body>
+    <div class="parent_div">
+        <form method="post" action="/SignUP/SignUp">
+            <h2 style="text-align:center">Sign Up</h2>
+            <div class="blocks"><input asp-for="firstName" placeholder="First Name" /><br />              </div>
+            <div class="blocks"><input asp-for="secondName" placeholder="Second Name" /><br />            </div>
+            <div class="blocks"><input asp-for="email" placeholder="Email" /><br />                      </div>
+            <div class="blocks"><input asp-for="password" type="password" placeholder="Password" /><br />             </div>
+            <div class="blocks"><input asp-for="password" type="password" placeholder="Re-Enter password" /><br /></div>
+            <div class="blocks">
+                <input  name="gender" type="radio" value="male"/>                
+                <label>Male</label>                                              
+                <input name="gender" type="radio" value="female"/>                             
+                <label>Fe-Male</label>                                           
+                <input name="gender" type="radio" value="other"/>                             
+                <label>Other</label><br />
+             </div>
+            <div class="blocks"><input asp-for="phone_no" placeholder="Phone No" /><br /></div>
+            <div class="button"><button type="submit" value="signup">Register</button></div>
+        </form>
+    </div>
+</body>
+</html>
