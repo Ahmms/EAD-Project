@@ -16,13 +16,14 @@ namespace Project.Controllers
             return View("SignInPage",si);
         }
         [HttpPost]
-        public ViewResult SignIn(SignIn si)
+        public IActionResult SignIn(SignIn si)
         {
             bool check = SignIn_functions.credential_verification(si);
             if (check == true)
             {
                 Home_Class hs = new Home_Class();
-                return View("~/Views/Home/Home.cshtml", hs.DisplayUsers());
+               // return View("~/Views/Home/LoginHome.cshtml", hs.DisplayUsers());
+                return RedirectToAction("LoginHome", "Home", hs.DisplayUsers());
             }
             else
             {

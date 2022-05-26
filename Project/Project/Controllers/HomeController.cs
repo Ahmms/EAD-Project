@@ -12,6 +12,15 @@ namespace Project.Controllers
         {
             return View("Home");
         }
+        public ViewResult LoginHome()
+        {
+            return View("LoginHome");
+        }
 
     }
+    public class LoginHomeController : Controller
+    {
+        
+    }
+
 }

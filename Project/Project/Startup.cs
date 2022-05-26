@@ -50,7 +50,7 @@ namespace Project
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=SignIn}/{action=SignIn}/{id?}");
+                    pattern: "{controller=Home}/{action=Home}/{id?}");
             });
         }
     }

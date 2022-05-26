@@ -1,25 +1,55 @@
-﻿@model List<Project.Models.SignUp>
-<table class="table table-dark table-hover table-striped">
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Second Name</th>
-            <th>Email</th>
-            <th>Gender</th>
-            <th>Phone NO</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(Project.Models.SignUp s in Model)
-            {
-        <tr>
-            <td>@s.firstName</td>
-            <td>@s.secondName</td>
-            <td>@s.email</td>
-            <td>@s.gender</td>
-            <td>@s.phone_no</td>
-        </tr>
-            }
-    </tbody>
-</table>
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "AutoMart";
+}
+@section homestyle{
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link href="~/css/Home.css" rel="stylesheet" />
+}
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <p class="navbar-brand" style='font-size:30px;'>AutoMart</p>
+            <i class='fas fa-car' style='font-size:30px;color:red'></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+        </div>
+    </nav>
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-6">
+                    <div class="text-center my-5">
+                        <h1 class="display-5 fw-bolder text-white mb-2">Find & Sell Used Vehicle in Pakistan</h1>
+                        <p class="lead text-white-50 mb-4">Buy & Sell Cars, Bikes and Auto Parts faster and better!</p>
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="/SignIn/SignIn">Sign In</a>
+                            <a class="btn btn-outline-light btn-lg px-4" href="/SignUp/SignUp">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <footer class="py-5 bg-dark">
+        <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

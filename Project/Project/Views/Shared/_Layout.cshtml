@@ -2,25 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <link rel="icon" href="" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - EAD Project</title>
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    @await RenderSectionAsync("styles", required: false)
+    @await RenderSectionAsync("SignInStyles", required: false) 
+    @await RenderSectionAsync("homestyle", required: false) 
+    @await RenderSectionAsync("signupStyle",required:false) 
 </head>
 <body>
-    
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <div>
+         @RenderBody()
     </div>
-
-    
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+     
 </body>
 </html>
