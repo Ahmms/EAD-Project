@@ -18,17 +18,24 @@ namespace Project.Controllers
         [HttpPost]
         public IActionResult SignIn(SignIn si)
         {
-            bool check = SignIn_functions.credential_verification(si);
-            if (check == true)
+            if (ModelState.IsValid)
             {
-                Home_Class hs = new Home_Class();
-               // return View("~/Views/Home/LoginHome.cshtml", hs.DisplayUsers());
-                return RedirectToAction("LoginHome", "Home", hs.DisplayUsers());
+                bool check = SignIn_functions.credential_verification(si);
+                if (check == true)
+                {
+                    Home_Class hs = new Home_Class();
+                    // return View("~/Views/Home/LoginHome.cshtml", hs.DisplayUsers());
+                    return RedirectToAction("LoginHome", "Home", hs.DisplayUsers());
+                }
+                else
+                {
+                    si.message = "Invalid UserName or Password!";
+                    return View("SignInPage", si);
+                }
             }
             else
             {
-                si.message = "Invalid UserName or Password!";
-                return View("SignInPage",si);
+                return View("SignInPage");
             }
         }
     }

@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
+using System.ComponentModel.DataAnnotations;
 namespace Project.Models
 {
     public class SignIn
     {
+        [Required(ErrorMessage = "Required")]
         public string userName { get; set; }
+        [Required(ErrorMessage = "Required")]
         public string password { get; set; }
         public string message { get; set; }
     }

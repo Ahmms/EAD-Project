@@ -124,3 +124,4 @@ C:\Users\Ahmad\Desktop\GITHUB\EAD project\EAD-Project\Project\Project\bin\Debug\
 C:\Users\Ahmad\Desktop\GITHUB\EAD project\EAD-Project\Project\Project\obj\Debug\net5.0\staticwebassets\Project.StaticWebAssets.xml
 C:\Users\Ahmad\Desktop\GITHUB\EAD project\EAD-Project\Project\Project\obj\Debug\net5.0\Razor\Views\Home\LoginHome.cshtml.g.cs
 C:\Users\Ahmad\Desktop\GITHUB\EAD project\EAD-Project\Project\Project\obj\Debug\net5.0\Razor\Views\Shared\HLPartial.cshtml.g.cs
+C:\Users\Ahmad\Desktop\GITHUB\EAD project\EAD-Project\Project\Project\obj\Debug\net5.0\Razor\Views\Shared\_homeLayout.cshtml.g.cs

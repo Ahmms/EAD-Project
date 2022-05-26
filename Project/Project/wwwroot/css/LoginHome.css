@@ -8,6 +8,7 @@ body {
 .card {
     width: 250px;
     border-radius: 10px;
+    padding-bottom:20px;
 }
 
 .card-img-top {
@@ -65,6 +66,8 @@ small.justify-content-center {
     }
 }
 #login{
-    display:flex;
-    justify-content:center;
+    
+}
+#car_card {
+    margin: auto;
 }

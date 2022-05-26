@@ -16,10 +16,17 @@ namespace Project.Controllers
         [HttpPost]
         public ViewResult SignUp(SignUp su)
         {
-            users_repository.Add_Users(su);
-            SignIn si = new SignIn();
-            si.message = "";
-            return View("~/Views/SignIn/SignInPage.cshtml",si);
+            if (ModelState.IsValid)
+            {
+                users_repository.Add_Users(su);
+                SignIn si = new SignIn();
+                si.message = "";
+                return View("~/Views/SignIn/SignInPage.cshtml", si);
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }

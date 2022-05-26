@@ -3,17 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
+using System.ComponentModel.DataAnnotations;
 namespace Project.Models
+
 {
     public class SignUp
     {
+        [Required(ErrorMessage = "Required")]
         public string firstName { get; set; }
+        [Required(ErrorMessage = "Required")]
         public string secondName { get; set; }
+        [Required(ErrorMessage = "Required")]
         public string email { get; set; }
+        [Required(ErrorMessage = "Required")]
         public string password { get; set; }
+        [Required(ErrorMessage = "Required")]
         public string gender { get; set; }
+        [Required(ErrorMessage = "Required")]
         public string phone_no { get; set; }
-    }
+        
+    } 
     public class users_repository
     {
         public static void Add_Users(SignUp su)
