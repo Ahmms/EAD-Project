@@ -23,9 +23,8 @@ namespace Project.Controllers
                 bool check = SignIn_functions.credential_verification(si);
                 if (check == true)
                 {
-                    Home_Class hs = new Home_Class();
                     // return View("~/Views/Home/LoginHome.cshtml", hs.DisplayUsers());
-                    return RedirectToAction("LoginHome", "Home", hs.DisplayUsers());
+                    return RedirectToAction("LoginHome", "Home");
                 }
                 else
                 {

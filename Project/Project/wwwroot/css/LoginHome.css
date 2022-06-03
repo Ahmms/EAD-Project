@@ -71,3 +71,9 @@ small.justify-content-center {
 #car_card {
     margin: auto;
 }
+#heading{
+    font-weight:bold;
+}
+#sub_heading{
+    font-weight:bolder;
+}

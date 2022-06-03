@@ -1,0 +1,57 @@
+﻿body {
+    background-color: #F2F3F3;
+}
+
+.nopad {
+    padding: 0 !important
+}
+
+#size {
+    height: 40px;
+    width: 40px;
+}
+
+.main {
+    padding-top: 20px;
+    background-color: #FFFFFF;
+    margin: 1%;
+}
+
+.info {
+    background-color: #FFFFFF;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.heading {
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#inputPassword {
+    width: 40%;
+}
+
+.select2-container .select2-selection--single {
+    height: 34px !important;
+}
+
+.select2-container--default .select2-selection--single {
+    border: 1px solid #ccc !important;
+    border-radius: 0px !important;
+}
+
+#city_box {
+    width: 30%;
+}
+
+#cointainer {
+    display: flex;
+    justify-content: center;
+}
+
+#text_Area {
+    width: 100%;
+}
