@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Project.Models;
+using System.Runtime.Caching;
+using CacheManager.Web;
+using CacheManager.Core;
 namespace Project.Controllers
 {
     public class SignInController : Controller
@@ -24,6 +27,8 @@ namespace Project.Controllers
                 if (check == true)
                 {
                     // return View("~/Views/Home/LoginHome.cshtml", hs.DisplayUsers());
+                    Environment.SetEnvironmentVariable("userId", ""+si.userName+"");
+                    string id = Environment.GetEnvironmentVariable("userId");
                     return RedirectToAction("LoginHome", "Home");
                 }
                 else

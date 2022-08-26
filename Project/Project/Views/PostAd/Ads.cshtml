@@ -1,7 +1,7 @@
 ﻿@model Ads
 @{
-    Layout = "_Layout";
-    ViewData["Title"] = "Post Ad";
+    Layout = "_homeLayout";
+    ViewData["Title"] = "Post an Ad";
 }
 @section ads{
     <meta charset="UTF-8">
@@ -91,8 +91,7 @@
   </section>
 </div>
 
-<form method="post" action="/PostAd/AdsView
-">
+<form method="post" action="/PostAd/AdsView" enctype="multipart/form-data">
 <div class="info">
       <div class="heading">
         <h4>Car Information</h4>
@@ -357,14 +356,15 @@
     <option value="Daihatsu">Daihatsu</option>
     <option value="Nissan">Nissan</option>
     </select>
-                        </div>
-                        <div class="form-group mt-3">
-                          <label>Variant</label>
-                            <select asp-for="variant" class="form-control" placeholder="Variant*" required>
-                                  <option value="1980" id="honda" style="display:none">Civic</option>
-                                  <option value="1981" id="toyota" style="display:none">City</option>
-                            </select>
-                        </div>
+    </div>
+    <div class="form-group mt-3">
+      <label>Variant</label>
+        <select asp-for="variant" class="form-control" placeholder="Variant*" required>
+            <option value="" disabled selected>Select The Car Variant</option>  
+            <option value="Civic" id="honda">Civic</option>
+             <option value="City" id="toyota">City</option>
+        </select>
+    </div>
                         <div class="form-group mt-3">
                           <label>Model</label>
                             <select asp-for="model" class="form-control" placeholder="Model*" required>
@@ -665,7 +665,7 @@
                         <div class="form-group mt-3">
                           
                           <label>Exterior Color</label>
-                            <select asp-for="exteriorColor" class="form-control" placeholder="Color*" required>
+                            <select asp-for="eColor" class="form-control" placeholder="Color*" required>
     <option value="" disabled selected>Select The Car Exterior Color</option>
     <option style="background-color:white" value="White">White</option>
     <option style="background-color:black; color:white" value="Black">Black</option>
@@ -691,6 +691,21 @@
                             <input asp-for="price" class="form-control" placeholder="Price*" required>
                         </div>
                         <div class="form-group mt-3">
+                          
+                          <label>Location</label>
+                          <br />
+                            <button onclick="getLocation()">Get Location</button>
+                            <input id="long" asp-for="longitutde" value="a" hidden/>
+                            <input id="lat" asp-for="latitude" value="b" hidden/>
+                        </div>
+                        <div class="form-group mt-3">
+                        <label>Features</label>
+                              <select asp-for="city" class="form-control" placeholder="City*" required multiple>
+                                  <option value="" disabled selected>Select The Features</option>
+                                  <option value="Islamabad">Islamabad</option>
+                               </select>
+                        </div>
+                        <div class="form-group mt-3">
                           <label>Ad Description</label> 
                           <textarea asp-for="description" id="text_Area" placeholder="Describe Your car: 
                           Example: Alloy rim, first owner, genuine parts, maintained by authorized workshop, excellent mileage, original paint etc." rows="6" data-parsley-id="9459"></textarea>
@@ -701,9 +716,161 @@
     </div>
 </div>
 <div class="info">
+        <div class="well">
+          <div class="slide-on-demand">
+            <div id="engine_details">
+              <div class="form-group">
+                <label class="col-md-3" for="engine_type"> Engine Type<span class="text-error">*</span></label>
+                <div class="col-md-9">
+                  <select>
+                    <option value="">Engine Type</option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="LPG">LPG</option>
+                    <option value="CNG">CNG</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Electric">Electric</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group" id="div_capacity">
+                
+                <label class="col-md-3" for="engine_capacity">
+                  Engine Capacity
+                  <span class="text-error">*</span> <span>(cc)</span>
+                </label>
+                
+                <div class="col-md-9">
+                  <input maxlength="5" minlength="3" placeholder="Engine Capacity (cc)">
+                </div>
+  
+              </div>
+  
+  
+              </div>
+            
+              <div class="form-group">
+                <label class="col-md-3" for="transmission"> Transmission<span class="text-error">*</span></label>
+                <div class="col-md-9">
+                  <select>
+                    <option value="">Transmission</option>
+                    <option value="Manual" selected="selected">Manual</option>
+                    <option value="Automatic">Automatic</option></select>
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label class="col-md-3" for="assembly"> Assembly<span class="text-error">*</span></label>
+                <div class="col-md-9">
+                  <select><option value="">Assembly</option>
+                        <option value="Local">Local</option>
+                        <option value="Imported">Imported</option>
+                  </select>
+                </div>
+              </div>
+            </div>  
+              <div class="form-group">
+                <label class="col-md-3" for="features">Features</label>
+                <div class="col-md-9">
+                  <ul id="feature_lists" class="list-unstyled list-inline sell-feature-list">
+                    <li>
+                      <label><input type="checkbox" value="ABS"> ABS</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Air Bags"> Air Bags</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" value="Air Conditioning"> Air Conditioning</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Alloy Rims"> Alloy Rims</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="AM/FM Radio"> AM/FM Radio</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="CD Player"> CD Player</label>
+                    </li>
+                    <li>
+                      <label><input  type="checkbox" value="Cassette Player"> Cassette Player</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Cool Box"> Cool Box</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Cruise Control"> Cruise Control</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Climate Control"> Climate Control</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="DVD Player"> DVD Player</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Front Speakers"> Front Speakers</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Front Camera"> Front Camera</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Heated Seats"> Heated Seats</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Immobilizer Key"> Immobilizer Key</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Keyless Entry"> Keyless Entry</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Navigation System"> Navigation System</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Power Locks"> Power Locks</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Power Mirrors"> Power Mirrors</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Power Steering"> Power Steering</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Power Windows"> Power Windows</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Rear Seat Entertainment"> Rear Seat Entertainment</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Rear AC Vents"> Rear AC Vents</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Rear Speakers"> Rear Speakers</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Rear Camera"> Rear Camera</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Sun Roof"> Sun Roof</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="Steering Switches"> Steering Switches</label>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" value="USB and Auxillary Cable"> USB and Auxillary Cable</label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+</div>
+<div class="info">
   <div class="heading">
+
     <h4>Upload Images</h4>
-    <input asp-for="ContentImage" type="file" id="myFile" name="filename">
+    <label asp-for="image" class="control-label"></label>
+    <input asp-for="image" class="form-control" type="file">
+    <span asp-validation-for="image" class="text-danger"></span>
   </div>
 </div>
 <div class="info">
@@ -719,7 +886,7 @@
                   </div>
                   <div class="form-group mt-3">
                     <label>Mobile Number</label>
-                    <input asp-for="mobileNo" type="tel" class="form-control" placeholder="Mobile Number*" required>
+                    <input asp-for="mobNumber" type="tel" class="form-control" placeholder="Mobile Number*" required>
                   </div>
                   <div class="form-group">
                     <button type="submit" class="form-control btn btn-primary rounded submit px-3" value="signup">Post Ad</button>
@@ -729,4 +896,17 @@
   </div>
 </div>
 </form>
+<script>
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+function showPosition(position) {
+    $('#lat').val(position.coords.latitude);
+    $('#long').val(position.coords.longitude);
+}
+</script>
 <script src="~/js/ads.js"></script>

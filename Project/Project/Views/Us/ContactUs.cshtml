@@ -1,0 +1,46 @@
+﻿@model ContactUs
+@{
+    Layout = "_homeLayout";
+    ViewData["Title"] = "Contact Us";
+}
+<link rel="stylesheet" href="~/css/ContactUs.css" />
+<div class="menu">
+    <div class="background">
+      <div class="container1">
+        <div class="screen">
+          <div class="screen-body">
+            <div class="screen-body-item left">
+              <div class="app-title">
+                <span>CONTACT</span>
+                <span>US</span>
+              </div>
+
+              <div class="app-contact">CONTACT INFO : <a href="mailto:automart@gmail.com">automart@gmail.com</a></div>
+            </div>
+            <div class="screen-body-item">
+              <div class="app-form">
+                  <form method="post" action="/ContactUs/ContactUs">
+                <div class="app-form-group">
+                  <input asp-for="name" class="app-form-control" placeholder="NAME" required>
+                </div>
+                <div class="app-form-group">
+                  <input asp-for="mail" class="app-form-control" placeholder="EMAIL" required>
+                </div>
+                <div class="app-form-group">
+                  <input asp-for="contact" class="app-form-control" placeholder="CONTACT NO" required>
+                </div>
+                <div class="app-form-group message">
+                  <input asp-for="message" class="app-form-control" placeholder="MESSAGE" required>
+                </div>
+                <div class="app-form-group buttons">
+                  <button type="reset" class="app-form-button">CANCEL</button>
+                  <button type="submit" class="app-form-button">SEND</button>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

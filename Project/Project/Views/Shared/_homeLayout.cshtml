@@ -10,38 +10,51 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     @await RenderSectionAsync("styles", required: false)
-    
+    @await RenderSectionAsync("ads",required:false)
     <link rel="stylesheet" href="~/css/LoginHome.css" />
-
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container">
-      <div class="navbar-brand" id="heading">AutoMart</div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item active">
-            <a class="nav-link" id="sub_heading" href="#">Home</a>
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+  
+      <h1 class="logo">AutoMart<span></span></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+  
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="/Home/LoginHome">Home</a></li>
+          <li><a class="nav-link scrollto" href="/PostAd/Ads">Post an Ad</a></li>
+          <li><a class="nav-link scrollto" href="/Us/AboutUs">About Us</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Search Car</a></li>
+          <li><a class="nav-link scrollto" href="#team">Blog</a></li>
+          <li class="dropdown"><a class="nav-link scrollto" href="#"><span>More</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a class="nav-link scrollto" href="#">New Cars</a></li>
+              <li class="dropdown"><a class="nav-link scrollto" href="#"><span>Account Setting</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a class="nav-link scrollto" href="/AccountSetting/Index">Change Password</a></li>
+                  <li><a class="nav-link scrollto" href="#">Saved Ads</a></li>
+                  <li><a class="nav-link scrollto" href="#">Your Ads</a></li>
+                  <li><a class="nav-link scrollto" href="#">option 1</a></li>
+                  <li><a class="nav-link scrollto" href="#">LogOut</a></li>
+                </ul>
+              </li>
+              <li><a class="nav-link scrollto" href="#">Drop Down 2</a></li>
+              <li><a class="nav-link scrollto" href="#">Drop Down 3</a></li>
+              <li><a class="nav-link scrollto" href="#">Drop Down 4</a></li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" id="sub_heading" href="#">Post An Ad</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="sub_heading" href="#">Our Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="sub_heading" href="#">More</a>
-          </li>
+          <li><a class="nav-link scrollto" href="/Us/ContactUs">Contact Us</a></li>
         </ul>
-      </div>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+  
     </div>
-  </nav>
+  </header>
   <br />
   <br />
-    <div>
+    <div id="renderHere">
         @RenderBody()
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
