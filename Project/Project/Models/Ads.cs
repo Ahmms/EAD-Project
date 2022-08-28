@@ -60,9 +60,24 @@ namespace Project.Models
             string connStr = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             SqlConnection conn = new SqlConnection(connStr);
             conn.Open();
-            string sql = "INSERT INTO AdsData (city,model,make,variant,registerdIn,eColor,mileage,price,description,mobNumber,userName) VALUES ('" + ad.city + "','" + ad.model + "','" + ad.make + "','" + ad.variant + "','" + ad.registerdIn + "','" + ad.eColor + "','" + ad.mileage + "','" + ad.price + "','" + ad.description + "','" + ad.mobNumber + "','" + ad.userName + "')";
+            string sql = "INSERT INTO AdsData (city,model,make,variant,registerdIn,eColor,mileage,price,description,mobNumber,userName,image) VALUES ('" + ad.city + "','" + ad.model + "','" + ad.make + "','" + ad.variant + "','" + ad.registerdIn + "','" + ad.eColor + "','" + ad.mileage + "','" + ad.price + "','" + ad.description + "','" + ad.mobNumber + "','" + ad.userName + "','"+ad.image+"')";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.ExecuteReader();
+        }
+        public static string getId()
+        {
+            string str="0";
+            string connStr = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Project;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            SqlConnection conn = new SqlConnection(connStr);
+            conn.Open();
+            string sql = "Select * from AdsData";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                str = Convert.ToString(dr[0]);
+            }
+            return str;
         }
     }
 

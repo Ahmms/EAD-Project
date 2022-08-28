@@ -3,16 +3,17 @@ using Project.Models;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using System;
-using System.Collections.Generic;
-using Microsoft.Extensions.Logging;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
+using Microsoft.AspNetCore.Hosting;
+
 namespace Project.Controllers
 {
     public class PostAdController : Controller
     {
+        private IWebHostEnvironment _webHostEnvironment;
+        public PostAdController(IWebHostEnvironment env)
+        {
+            _webHostEnvironment = env;
+        }
         public ViewResult Ads()
         {
             return View("Ads");
@@ -22,18 +23,15 @@ namespace Project.Controllers
             if (ModelState.IsValid)
             {
                 ad.userName = Environment.GetEnvironmentVariable("userId");
+                string str=AdsFunction.getId();
                 if (image != null)
                 {
-                    Byte[] fileBytes;
-                    //MemoryStream memoryStream = new MemoryStream();
-                    //image.OpenReadStream().CopyTo(memoryStream);
-                    //ad.image = Convert.ToBase64String(memoryStream.ToArray());
-                        using (var ms = new MemoryStream())
-                        {
-                            image.CopyTo(ms);
-                            fileBytes = ms.ToArray();
-                        }
-                    ad.photo = fileBytes;
+                    string filename = "images/AdImages/" + str + ".png";
+                    string Serverfilename = Path.Combine(_webHostEnvironment.WebRootPath, filename);
+                    FileStream f = new FileStream(Serverfilename, FileMode.Create);
+                    //ad.image1.CopyTo(f);
+                    f.Close();
+                    ad.image = filename;
                 }
                 else
                 {

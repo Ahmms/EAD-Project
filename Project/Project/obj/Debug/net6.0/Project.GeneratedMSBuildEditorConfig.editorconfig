@@ -1,0 +1,72 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Project
+build_property.RootNamespace = Project
+build_property.ProjectDir = C:\Users\Ahmad\Desktop\GITHUB\EAD project\EAD-Project\Project\Project\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Ahmad\Desktop\GITHUB\EAD project\EAD-Project\Project\Project
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Ahmad/Desktop/GITHUB/EAD project/EAD-Project/Project/Project/Views/AccountSetting/changePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFNldHRpbmdcY2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmad/Desktop/GITHUB/EAD project/EAD-Project/Project/Project/Views/AllVehicle/AllCars.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxsVmVoaWNsZVxBbGxDYXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmad/Desktop/GITHUB/EAD project/EAD-Project/Project/Project/Views/Home/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmad/Desktop/GITHUB/EAD project/EAD-Project/Project/Project/Views/Home/LoginHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbkhvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmad/Desktop/GITHUB/EAD project/EAD-Project/Project/Project/Views/PostAd/Ads.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdEFkXEFkcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmad/Desktop/GITHUB/EAD project/EAD-Project/Project/Project/Views/Shared/HLPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhMUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmad/Desktop/GITHUB/EAD project/EAD-Project/Project/Project/Views/Shared/_homeLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9ob21lTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmad/Desktop/GITHUB/EAD project/EAD-Project/Project/Project/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmad/Desktop/GITHUB/EAD project/EAD-Project/Project/Project/Views/SignIn/SignInPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2lnbkluXFNpZ25JblBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmad/Desktop/GITHUB/EAD project/EAD-Project/Project/Project/Views/SignUp/SignUpPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2lnblVwXFNpZ25VcFBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmad/Desktop/GITHUB/EAD project/EAD-Project/Project/Project/Views/Us/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNcQWJvdXRVcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmad/Desktop/GITHUB/EAD project/EAD-Project/Project/Project/Views/Us/ContactUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNcQ29udGFjdFVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmad/Desktop/GITHUB/EAD project/EAD-Project/Project/Project/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmad/Desktop/GITHUB/EAD project/EAD-Project/Project/Project/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
